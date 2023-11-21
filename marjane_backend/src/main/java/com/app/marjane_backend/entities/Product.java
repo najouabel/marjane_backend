@@ -17,8 +17,8 @@ public class Product {
     private String brand;
     private float price;
 
-    /*@OneToOne(mappedBy = "product")
+    @OneToOne(mappedBy = "product")
     private ProductPromotion productPromotion;
     @ManyToOne
-    private Category category;*/
+    private Category category;
 }

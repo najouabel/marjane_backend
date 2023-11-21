@@ -4,16 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@NoArgsConstructor
-@Getter
-@Setter
 @Entity
+@Data
 @Table(name = "product_promotion")
 public class ProductPromotion extends Promotion{
- /*   @OneToOne
-    private Product product;*/
+  @OneToOne
+    private Product product;
 }

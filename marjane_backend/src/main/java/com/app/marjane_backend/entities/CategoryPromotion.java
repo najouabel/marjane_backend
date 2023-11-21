@@ -1,16 +1,12 @@
 package com.app.marjane_backend.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@NoArgsConstructor
-@Getter
-@Setter
 @Entity
+@Data
 @Table(name = "category_promotion")
 public class CategoryPromotion extends Promotion{
-    /*@OneToOne
-    private Category category;*/
+    @OneToOne
+    private Category category;
 }

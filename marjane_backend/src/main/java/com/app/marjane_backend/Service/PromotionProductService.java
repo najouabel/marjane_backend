@@ -13,5 +13,5 @@ public interface PromotionProductService {
     ProductPromotion read(Long id);
     List<ProductPromotion> readAll();
     ProductPromotion update(ProductPromotion ProductPromotion);
-    String delete(Long id);
+    void delete(Long id);
 }

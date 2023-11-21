@@ -5,6 +5,8 @@ import com.app.marjane_backend.Service.PromotionCategorieService;
 import com.app.marjane_backend.Service.implementation.PromotionCategorieServiceImp;
 import com.app.marjane_backend.Service.implementation.PromotionProductServiceImp;
 import com.app.marjane_backend.entities.ProductPromotion;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/promotion")
+
+@AllArgsConstructor
 public class PromotionProductController {
     private final PromotionProductServiceImp service;
 
-    @Autowired
-    public PromotionProductController(PromotionProductServiceImp promotionProductService) {
-        this.service = promotionProductService;
-    }
 
-    @PostMapping("/product")
+    @PostMapping
     public ResponseEntity<String> createProductPromotion(@RequestBody ProductPromotion productPromotion) {
         ProductPromotion createdProductPromotion = service.create(productPromotion);
         if (createdProductPromotion != null) {
